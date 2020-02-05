@@ -1,0 +1,30 @@
+.imagen {
+    height: 400px;
+    object-fit: cover;
+}
+
+.btn {
+    width: 40%;
+    vertical-align: center;
+    margin-right: 10px;
+}
+
+.option-button {
+    height: 100%;
+}
+
+.media-object {
+    height: 65px;
+}
+
+.sameSize {
+    line-height: 50px;
+}
+
+.confirm {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Projectos: </h2>
+    <div class="row">
+        <div class="col-md-4 card-deck w-100 h-100" *ngFor="let project of projects">
+            <a [routerLink]="['/proyecto', project._id]" class="text-reset text-decoration-none">
+                <div class="card card-photo mb-3">
+                    <div class="card-header text-white bg-dark text-center font-weight-bold">
+                        {{project.name}}
+                    </div>
+                    <img src="{{url+ 'get-image/' + project.image}}" class="card-img-top imagen" *ngIf="project.image">
+                    <div class="card-body text-center">
+                        {{project.category}}
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

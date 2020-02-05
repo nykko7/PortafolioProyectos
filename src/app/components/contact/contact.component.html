@@ -1,0 +1,63 @@
+<div class="container">
+    <h2>Formulario de Contacto</h2>
+
+    <div class="row d-flex justify-content-center">
+        <div class="message col-md-6 col-md-offset-3 d-flex justify-content-center success text-center" *ngIf=" status=='success'">
+            El formulario de contacto se ha enviado correctamente
+        </div>
+        <div class="message col-md-6 col-md-offset-3 col-center failed text-center" *ngIf="status=='failed'">
+            El formulario de contacto no se ha podido enviar.
+        </div>
+    </div>
+
+    <form #ContactForm="ngForm" (ngSubmit)="onSubmit(ContactForm)">
+        <div class="row">
+            <div class="form-group col-md-6 col-center">
+                <label class="font-weight-bold" for="name">Nombre</label>
+                <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="contact.name" required>
+                <span class="form_error" *ngIf="name.touched && !name.valid">
+                    El Nombre es obligatorio
+                </span>
+            </div>
+
+            <div class="form-group col-md-6 col-center">
+                <label class="font-weight-bold" for="lastName">Apellido</label>
+                <input type="text" class="form-control" name="lastName" #lastName="ngModel" [(ngModel)]="contact.lastName" required>
+                <span class="form_error" *ngIf="lastName.touched && !lastName.valid">
+                    El Apellido es obligatorio
+                </span>
+            </div>
+
+            <div class="form-group col-md-6 col-center">
+                <label class="font-weight-bold" for="email">Email</label>
+                <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="contact.email" required>
+                <span class="form_error" *ngIf="email.touched && !email.valid">
+                    El Email es obligatorio
+                </span>
+            </div>
+
+            <div class="form-group col-md-6 col-center">
+                <label class="font-weight-bold" for="subject">Asunto</label>
+                <input type="text" class="form-control" name="subject" #subject="ngModel" [(ngModel)]="contact.subject" required>
+                <span class="form_error" *ngIf="subject.touched && !subject.valid">
+                    El Asunto es obligatorio
+                </span>
+            </div>
+
+            <div class="form-group col-md-12 col-center">
+                <label class="font-weight-bold" for="message">Mensaje</label>
+                <textarea name="message" class="form-control" #message="ngModel" [(ngModel)]="contact.message" required></textarea>
+                <span class="form_error" *ngIf="message.touched && !message.valid">
+                    El mensaje es obligatorio
+                </span>
+            </div>
+
+        </div>
+
+        <div class="form-group col-center">
+            <input type="submit" class="btn btn-dark btn-block font-weight-bold" [disabled]="!ContactForm.form.valid" value="Enviar">
+        </div>
+
+    </form>
+
+</div>

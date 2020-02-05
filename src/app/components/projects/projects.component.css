@@ -1,0 +1,14 @@
+.card-photo {
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.card-photo:hover {
+    transform: scale(1.05, 1.05);
+    box-shadow: 4px 4px 4px rgba(33, 21, 100, 0.435);
+}
+
+.imagen {
+    height: 200px;
+    object-fit: cover;
+}
